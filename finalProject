@@ -10,18 +10,16 @@ public class main {
 		
 		//User and dealer gets two cards
 			
-		//Let user choose 'hit' or 'stand'
+		//Let user choose 'hit' or 'stand'. When the player has stop hitting, it is the dealer's turn.
 		
 		//For the dealer, if their score is 16 or lower they will hit. If the dealer's score is 17 or higher they will stand.
-		
-		//Have a value that holds whether or not the dealer and player have stood. 
 		
 		//When both the player and the dealer have stood, reveal scores
 		
 		System.out.println("If you would like to play blackjack again, please enter 'y' or 'Y'.");
 		repeat = keyboard.toUpperCase();
 		}
-		
+		System.out.println("Thank you for playing blackjack.");
 	}
 
 }
