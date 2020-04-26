@@ -1,4 +1,4 @@
-import java.io.Scanner;
+import java.util.Scanner;
 public class main {
 
 	public static void main(String[] args) {
@@ -7,20 +7,30 @@ public class main {
 		String repeat;
 		repeat = "Y";
 		while (repeat.equals("Y")){
-		
-		//User and dealer gets two cards
+			//draw two cards for dealer and player
 			
-		//Let user choose 'hit' or 'stand'. When the player has stop hitting, it is the dealer's turn.
+			String cardDraw;
+			
+			do {
+				System.out.println("Would you like to hit or stand?");
+				cardDraw = keyboard.nextLine();
+				while (!cardDraw.equalsIgnoreCase("hit") && !cardDraw.equalsIgnoreCase("stand")) {
+					System.out.println("The response you entered is invalid. Please enter either hit or stand.");
+					cardDraw = keyboard.nextLine();
+				}
+			}while (!cardDraw.equalsIgnoreCase("stand"));
+			
+			//getScore from dealer. if 16 or lower hit, if 17 or higher stand
+			
+			System.out.println("If you would like to play blackjack again, please enter 'y' or 'Y'.");
+			repeat = keyboard.nextLine();
+			repeat = repeat.toUpperCase();
 		
-		//For the dealer, if their score is 16 or lower they will hit. If the dealer's score is 17 or higher they will stand.
-		
-		//When both the player and the dealer have stood, reveal scores
-		
-		System.out.println("If you would like to play blackjack again, please enter 'y' or 'Y'.");
-		repeat = keyboard.toUpperCase();
 		}
-		System.out.println("Thank you for playing blackjack.");
+		System.out.println("Thank you for playing blackjack");
+		keyboard.close();
 	}
 
 }
+
 
