@@ -1,12 +1,25 @@
+import java.io.Scanner;
 public class main {
 
 	public static void main(String[] args) {
+		Scanner keyboard = new Scanner(System.in);
 		System.out.println("This is a game of blackjack.\nThe rules are simple. Try to get a higher score than the dealer. Two cards will be dealt to you at the start of the game.\nYou can choose to either 'hit', to get another card, or 'stand', to not get another card.\nNumbered cards hold the value of the number on the card. All face cards are worth 10 points. Aces can be either 1 or 11.");
-		char repeat;
-		repeat = 'Y';
-		while (repeat == 'Y'){
+		String repeat;
+		repeat = "Y";
+		while (repeat.equals("Y")){
+		
+		//User and dealer gets two cards
 			
-				
+		//Let user choose 'hit' or 'stand'
+		
+		//For the dealer, if their score is 16 or lower they will hit. If the dealer's score is 17 or higher they will stand.
+		
+		//Have a value that holds whether or not the dealer and player have stood. 
+		
+		//When both the player and the dealer have stood, reveal scores
+		
+		System.out.println("If you would like to play blackjack again, please enter 'y' or 'Y'.");
+		repeat = keyboard.toUpperCase();
 		}
 		
 	}
