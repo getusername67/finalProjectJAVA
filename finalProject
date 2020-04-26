@@ -1,1 +1,15 @@
+public class main {
+
+	public static void main(String[] args) {
+		System.out.println("This is a game of blackjack.\nThe rules are simple. Try to get a higher score than the dealer. Two cards will be dealt to you at the start of the game.\nYou can choose to either 'hit', to get another card, or 'stand', to not get another card.\nNumbered cards hold the value of the number on the card. All face cards are worth 10 points. Aces can be either 1 or 11.");
+		char repeat;
+		repeat = 'Y';
+		while (repeat == 'Y'){
+			
+				
+		}
+		
+	}
+
+}
 
