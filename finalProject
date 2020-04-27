@@ -12,9 +12,9 @@ public class main {
 			//draw two cards for dealer and player
 			
 			String cardDraw;
-			int playerScore;
+			int playerScore = 0;
 			
-			deck draw = new deck();
+			Deck draw = new Deck();
 			
 			System.out.println("Your first two cards are:");
 			number = RandomNumberGen.RNG();
@@ -49,9 +49,31 @@ public class main {
 			}while (!cardDraw.equalsIgnoreCase("stand"));
 			
 			String[] dealerCards;
+			int dealerScore = 0;
 			
+			number = RandomNumberGen.RNG();
+			points = ScoreProcess.scorer(number);
+			dealerScore += points;
 			
-			//getScore from dealer. if 16 or lower hit, if 17 or higher stand
+			number = RandomNumberGen.RNG();
+			points = ScoreProcess.scorer(number);
+			dealerScore += points;
+			
+			while (dealerScore <= 16) {
+				number = RandomNumberGen.RNG();
+				points = ScoreProcess.scorer(number);
+				dealerScore += points;
+			}
+			if (playerScore > 21) {
+				System.out.println("Player has busted");
+			}else {
+				System.out.println("Player's score: " + playerScore);
+			}
+			if (dealerScore > 21) {
+				System.out.println("Dealer has busted");
+			}else {
+				System.out.println("Dealer's score: " + dealerScore);
+			}
 			
 			System.out.println("If you would like to play blackjack again, please enter 'y' or 'Y'.");
 			repeat = keyboard.nextLine();
@@ -63,3 +85,4 @@ public class main {
 	}
 
 }
+
