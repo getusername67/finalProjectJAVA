@@ -1,54 +1,48 @@
-//
-//This class takes in the number that each card is associated with and returns the point per card.
-//last updated 4/26/20
+// This class takes in the number that each card is associated with and returns the point per card.
+// Last updated 4/26/20
 import java.util.Scanner;
 public class ScoreProcess {
+	
 	public static int scorer(int number) {
 		int score;
-		//Cards numbered 2
 		if (number == 0 || number == 14 || number == 27 || number == 40) {
 			score = 2;
-		//Cards numbered 3
-		}else if (number == 2 || number == 15 || number == 28 || number == 41){
+		} else if (number == 2 || number == 15 || number == 28 || number == 41) {
 			score = 3;
-		//Cards numbered 4
-		}else if (number == 3 || number == 16 || number == 29 || number == 42) {
+		} else if (number == 3 || number == 16 || number == 29 || number == 42) {
 			score = 4;
-		//Cards numbered 5
-		}else if (number == 4 || number == 17 || number == 30 || number == 43) {
+		} else if (number == 4 || number == 17 || number == 30 || number == 43) {
 			score = 5;
-		//Cards numbered 6
-		}else if (number == 5 || number == 18 || number == 31 || number == 44) {
+		} else if (number == 5 || number == 18 || number == 31 || number == 44) {
 			score = 6;
-		//Cards numbered 7
-		}else if (number == 6 || number == 19 || number == 32 || number == 45) {
+		} else if (number == 6 || number == 19 || number == 32 || number == 45) {
 			score = 7;
-		//Cards numbered 8
-		}else if (number == 7 || number == 20 || number == 33 || number == 46) {
+		} else if (number == 7 || number == 20 || number == 33 || number == 46) {
 			score = 8;
-		//Cards numbered 9
-		}else if (number == 8 || number == 21 || number == 34 || number == 47) {
+		} else if (number == 8 || number == 21 || number == 34 || number == 47) {
 			score = 9;
-		//Cards numbered 10, Jacks, Kings, and Queens
-		}else if (number == 9 || number == 22 || number == 35 || number == 48 || number == 10 || number == 11 || number == 12 || number == 23 || number == 24 || number == 25 || number == 36 || number == 37 || number == 38 || number == 49 || number == 50 || number == 51) {
+		} else if (number == 9 || number == 22 || number == 35 || number == 48 || number == 10 || number == 11 || number == 12 || number == 23 || number == 24 || number == 25 || number == 36 || number == 37 || number == 38 || number == 49 || number == 50 || number == 51) {
 			score = 10;
-		}else {
-		//Ace cards
+			
+		} else { //Ace Cards
 			System.out.println("Would you like the Ace to be 1 or 11?");
 			Scanner keyboard = new Scanner(System.in);
 			String response;
 			response = keyboard.nextLine();
-			//Lets the user choose whether thye would like the ace to be valued as one or eleven points
+			System.out.print("\n");
+			
 			while (!response.equals("1") && !response.equals("11")) {
 				System.out.println("The information you have entered is invalid. Please enter either 1 or 11.");
 				response = keyboard.nextLine();
 			}
+			
 			if (response.equals("1")){
 				score = 1;
-			}else {
+			} else {
 				score = 11;
 			}
 		}
+		
 		return score;
 	}
 }
