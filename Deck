@@ -2,25 +2,24 @@ import java.util.ArrayList;
 import java.util.Collections;
 public class Deck {
 	
+	//0-12 = Ace-King of Clubs
+	//13-25 = Ace-King of Diamonds
+	//26-38 = Ace-King of Hearts
+	//39-51 = Ace-King of Spades
 	
-	//0-12= Ace-King of Clubs
-	//13-25= Ace-King of Diamonds
-	//26-38= Ace-King of Hearts
-	//39-51= Ace-King of Spades
+	boolean cards[] = new boolean[52];        //Stores each card as true/false, true meaning the card exists in the deck
 	
-	boolean cards[] = new boolean[52];		//stores each card as true/false, true meaning the card exists in the deck
-	
-	public Deck() {					//constructor
+	public Deck() {                           //Constructor
 		for(int index=0;index<52;index++)
 			cards[index]=true;
-	}//end of constructor
+	} //End of constructor
 	
-	public String cardname(int input) {		//given index, returns string name of card
+	public String cardname(int input) {       //Given index, returns string name of card
 		//int input is index of card;
 		//0-12= Ace-King of Clubs
-		//13-25= Ace-King of Diamonds
-		//26-38= Ace-King of Hearts
-		//39-51= Ace-King of Spades
+		//13-25 = Ace-King of Diamonds
+		//26-38 = Ace-King of Hearts
+		//39-51 = Ace-King of Spades
 		String cardname="";
 		
 		if(input%13==0) {
@@ -55,25 +54,23 @@ public class Deck {
 			cardname=cardname+"Clubs";
 		} else if(input<=25) {
 			cardname=cardname+"Diamonds";
-		}else if(input<=38) {
+		} else if(input<=38) {
 			cardname=cardname+"Hearts";
 		} else {
 			cardname=cardname+"Spades";
 		}
 		return cardname;
-	}//end of cardname
+	} //End of cardname
 	
-	public int checksize() {		//gives size of cards (52-# of missing cards)
+	// Gives size of cards (52-# of missing cards)
+	public int checksize() {
 		int size=0;
 		for(int index=0;index<52;index++) {
 			
 			if(cards[index]) {
 				size++;
 			}
-			
 		}
 		return size;
-	}//end of checksize
-	 
-	
+	} //End of checklist	 
 }
