@@ -12,17 +12,23 @@ public class main {
 			//draw two cards for dealer and player
 			
 			String cardDraw;
+			int playerScore;
 			
-			Deck draw = new Deck();
+			deck draw = new deck();
 			
 			System.out.println("Your first two cards are:");
 			number = RandomNumberGen.RNG();
 			cardDraw = draw.cardname(number);
 			System.out.println(cardDraw);
+			int points;
+			points = ScoreProcess.scorer(number);
+			playerScore += points;
 			
 			number = RandomNumberGen.RNG();
 			cardDraw = draw.cardname(number);
 			System.out.println(cardDraw);
+			points = ScoreProcess.scorer(number);
+			playerScore += points;
 			
 			do {
 				System.out.println("Would you like to hit or stand?");
@@ -33,12 +39,17 @@ public class main {
 				}
 				if (cardDraw.equalsIgnoreCase("hit")) {
 					number = RandomNumberGen.RNG();
-					
 					cardDraw = draw.cardname(number);
 					System.out.println(cardDraw);
+					points = ScoreProcess.scorer(number);
+					playerScore += points;
 					
 				}
+				
 			}while (!cardDraw.equalsIgnoreCase("stand"));
+			
+			String[] dealerCards;
+			
 			
 			//getScore from dealer. if 16 or lower hit, if 17 or higher stand
 			
