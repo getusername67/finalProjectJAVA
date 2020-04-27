@@ -8,14 +8,14 @@ public class Deck {
 	//26-38= Ace-King of Hearts
 	//39-51= Ace-King of Spades
 	
-	boolean cards[] = new boolean[52];//stores each card as true/false
+	boolean cards[] = new boolean[52];		//stores each card as true/false, true meaning the card exists in the deck
 	
-	public Deck() {//constructor
+	public Deck() {					//constructor
 		for(int index=0;index<52;index++)
 			cards[index]=true;
-	}
+	}//end of constructor
 	
-	public String cardname(int input) {//given index, returns string name of card
+	public String cardname(int input) {		//given index, returns string name of card
 		//int input is index of card;
 		//0-12= Ace-King of Clubs
 		//13-25= Ace-King of Diamonds
@@ -61,12 +61,9 @@ public class Deck {
 			cardname=cardname+"Spades";
 		}
 		return cardname;
-	}
+	}//end of cardname
 	
-	
-	
-	
-	public int checksize() {
+	public int checksize() {		//gives size of cards (52-# of missing cards)
 		int size=0;
 		for(int index=0;index<52;index++) {
 			
@@ -76,7 +73,7 @@ public class Deck {
 			
 		}
 		return size;
-	}//gives size of cards (52-# of missing cards)
+	}//end of checksize
 	 
 	
 }
