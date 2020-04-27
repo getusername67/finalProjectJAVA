@@ -6,10 +6,23 @@ public class main {
 		System.out.println("This is a game of blackjack.\nThe rules are simple. Try to get a higher score than the dealer. Two cards will be dealt to you at the start of the game.\nYou can choose to either 'hit', to get another card, or 'stand', to not get another card.\nNumbered cards hold the value of the number on the card. All face cards are worth 10 points. Aces can be either 1 or 11.");
 		String repeat;
 		repeat = "Y";
+		int number;
+	
 		while (repeat.equals("Y")){
 			//draw two cards for dealer and player
 			
 			String cardDraw;
+			
+			Deck draw = new Deck();
+			
+			System.out.println("Your first two cards are:");
+			number = RandomNumberGen.RNG();
+			cardDraw = draw.cardname(number);
+			System.out.println(cardDraw);
+			
+			number = RandomNumberGen.RNG();
+			cardDraw = draw.cardname(number);
+			System.out.println(cardDraw);
 			
 			do {
 				System.out.println("Would you like to hit or stand?");
@@ -17,6 +30,13 @@ public class main {
 				while (!cardDraw.equalsIgnoreCase("hit") && !cardDraw.equalsIgnoreCase("stand")) {
 					System.out.println("The response you entered is invalid. Please enter either hit or stand.");
 					cardDraw = keyboard.nextLine();
+				}
+				if (cardDraw.equalsIgnoreCase("hit")) {
+					number = RandomNumberGen.RNG();
+					
+					cardDraw = draw.cardname(number);
+					System.out.println(cardDraw);
+					
 				}
 			}while (!cardDraw.equalsIgnoreCase("stand"));
 			
@@ -32,5 +52,3 @@ public class main {
 	}
 
 }
-
-
