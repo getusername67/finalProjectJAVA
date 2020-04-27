@@ -1,3 +1,5 @@
+// This is the main class for a game of Blackjack
+// Last updated 4/26/20
 import java.util.Scanner;
 public class main {
 
