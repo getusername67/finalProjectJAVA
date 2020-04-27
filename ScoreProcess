@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class ScoreProcess {
 	public static int scorer(int number) {
 		int score;
-		if (number == 1 || number == 14 || number == 27 || number == 40) {
+		if (number == 0 || number == 14 || number == 27 || number == 40) {
 			score = 2;
 		}else if (number == 2 || number == 15 || number == 28 || number == 41){
 			score = 3;
