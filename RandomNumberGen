@@ -1,0 +1,10 @@
+import java.util.Random;
+public class RandomNumberGen {
+	
+	public static int RNG() {
+		Random rand = new Random();
+		int number = rand.nextInt(52);
+		return number;
+		
+	}
+}
