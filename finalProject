@@ -1,12 +1,17 @@
-//Matthew Sanders
-//This is the main class for a game of blackjack
-//Last updated 4/26/20
 import java.util.Scanner;
 public class main {
 
 	public static void main(String[] args) {
 		Scanner keyboard = new Scanner(System.in);
-		System.out.println("This is a game of blackjack.\nThe rules are simple. Try to get a higher score than the dealer. Two cards will be dealt to you at the start of the game.\nYou can choose to either 'hit', to get another card, or 'stand', to not get another card.\nNumbered cards hold the value of the number on the card. All face cards are worth 10 points. Aces can be either 1 or 11.");
+		System.out.println("Welcome to a game of Blackjack.\n "
+				+ "The rules are simple. Your goal is to get a higher score than the Dealer.\n"
+				+ " Both players will start with two cards from the deck at the start of the game.\n"
+				+ " You will then choose to either 'Hit' to get another card, "
+				+ "or 'Stand' to not get another card.\n"
+				+ " \n Numbered cards hold the value of the number on the card."
+				+ " \n All face cards are worth 10 points. \n Aces can be either 1 or 11 points.\n"
+		        + "-------------------------------------------------------------------------------------------------");
+
 		String repeat;
 		repeat = "Y";
 		int number;
@@ -22,34 +27,38 @@ public class main {
 			System.out.println("Your first two cards are:");
 			number = RandomNumberGen.RNG();
 			cardDraw = draw.cardname(number);
-			System.out.println(cardDraw);
 			int points;
 			points = ScoreProcess.scorer(number);
+			System.out.println(cardDraw);
 			playerScore += points;
 			
 			number = RandomNumberGen.RNG();
 			cardDraw = draw.cardname(number);
-			System.out.println(cardDraw);
 			points = ScoreProcess.scorer(number);
+			System.out.println(cardDraw + "\n");
 			playerScore += points;
 			
 			do {
-				System.out.println("Would you like to hit or stand?");
+				System.out.println("Your current hand is worth (" + playerScore + " Points).");
+				System.out.println("Would you like to hit or stand?");;
 				cardDraw = keyboard.nextLine();
+				System.out.print("\n");
 				while (!cardDraw.equalsIgnoreCase("hit") && !cardDraw.equalsIgnoreCase("stand")) {
 					System.out.println("The response you entered is invalid. Please enter either hit or stand.");
 					cardDraw = keyboard.nextLine();
 				}
+				
 				if (cardDraw.equalsIgnoreCase("hit")) {
 					number = RandomNumberGen.RNG();
 					cardDraw = draw.cardname(number);
-					System.out.println(cardDraw);
 					points = ScoreProcess.scorer(number);
+					System.out.println(cardDraw);
 					playerScore += points;
-					
 				}
 				
-			}while (!cardDraw.equalsIgnoreCase("stand"));
+			}
+			
+			while (!cardDraw.equalsIgnoreCase("stand"));
 			
 			String[] dealerCards;
 			int dealerScore = 0;
@@ -67,32 +76,31 @@ public class main {
 				points = ScoreProcess.scorer(number);
 				dealerScore += points;
 			}
+			
 			if (playerScore > 21) {
-				System.out.println("Player has busted");
-			}else {
+				System.out.println("Player has busted.");
+			} else {
 				System.out.println("Player's score: " + playerScore);
-			}
-			if (dealerScore > 21) {
-				System.out.println("Dealer has busted");
-			}else {
+			} if (dealerScore > 21) {
+				System.out.println("Dealer has busted.");
+			} else {
 				System.out.println("Dealer's score: " + dealerScore);
-			}
-			if (dealerScore > playerScore && dealerScore <= 21) {
-				System.out.println("Dealer has won");
-			}else if (playerScore > dealerScore && playerScore <=21) {
-				System.out.println("Player has won");
-			}else if(dealerScore == playerScore){
+			} if (dealerScore > playerScore && dealerScore <= 21) {
+				System.out.println("Dealer has won!");
+			} else if (playerScore > dealerScore && playerScore <= 21) {
+				System.out.println("Player has won!");
+			} else if(dealerScore == playerScore) {
 				System.out.println("Tie");
 			}
 			
-			System.out.println("If you would like to play blackjack again, please enter 'y' or 'Y'.");
+			System.out.println("\nIf you would like to play Blackjack again, please enter 'y' or 'Y'.");
 			repeat = keyboard.nextLine();
 			repeat = repeat.toUpperCase();
-		
+			System.out.print("\n");
 		}
-		System.out.println("Thank you for playing blackjack");
+		
+		System.out.println("Thank you for playing Blackjack.");
 		keyboard.close();
 	}
 
 }
-
