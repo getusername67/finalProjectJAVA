@@ -8,8 +8,7 @@ public class main {
 		System.out.println("Welcome to a game of Blackjack.\n "
 				+ "The rules are simple. Your goal is to get a higher score than the Dealer.\n"
 				+ " Both players will start with two cards from the deck at the start of the game.\n"
-				+ " You will then choose to either 'Hit' to get another card, "
-				+ "or 'Stand' to not get another card.\n"
+				+ " You will then choose to either 'Hit' to get another card, or 'Stand' to not get another card.\n"
 				+ " \n Numbered cards hold the value of the number on the card."
 				+ " \n All face cards are worth 10 points. \n Aces can be either 1 or 11 points.\n"
 		        + "-------------------------------------------------------------------------------------------------");
@@ -18,7 +17,7 @@ public class main {
 		repeat = "Y";
 		int number;
 	
-		while (repeat.equals("Y")){
+		while (repeat.equals("Y")) {
 			//draw two cards for dealer and player
 			
 			String cardDraw;
