@@ -74,6 +74,13 @@ public class main {
 			}else {
 				System.out.println("Dealer's score: " + dealerScore);
 			}
+			if (dealerScore > playerScore && dealerScore <= 21) {
+				System.out.println("Dealer has won");
+			}else if (playerScore > dealerScore && playerScore <=21) {
+				System.out.println("Player has won");
+			}else if(dealerScore == playerScore){
+				System.out.println("Tie");
+			}
 			
 			System.out.println("If you would like to play blackjack again, please enter 'y' or 'Y'.");
 			repeat = keyboard.nextLine();
